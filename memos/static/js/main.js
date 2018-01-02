@@ -67,7 +67,8 @@ function show_details(btn){
 
           
           $("#dialog").dialog({
-            resizable: false,
+            resizable: true,
+            autoResize:true,
             height: "auto",
             width: "auto",
             title: "Details",
