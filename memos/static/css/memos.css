@@ -1,0 +1,85 @@
+/*
+ * memos.css: 
+ *    Styles for 'Memos' go in this file 
+ */
+
+/* Nothing yet */
+
+label {
+    margin-right:50px;
+}
+
+.lyrics {
+    width:auto;
+    margin-left: 3em;
+    font-style: italic;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+button.button2 {
+    margin-right: 5px;
+    background-color: #3AC5F0;
+}
+
+button.button3 {
+    margin-left: 5px;
+    background-color: #2B97F0;
+}
+.attribution  {
+    font-size: smaller;
+}
+
+.container1	{
+	margin-bottom: 3em;
+    max-height: 27%;
+    background-color: yellow;
+    overflow: auto;
+    right: 0%;
+    text-align: center;
+}
+.container2 {
+    margin-bottom: 3em;
+    background-color: yellow;
+    overflow: auto;
+    right: 0%;
+    text-align: center;
+}
+
+
+.row {
+    color:#0000FF;
+    width:auto;
+    text-align: center;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+ font-size: 16px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+ul li {
+    line-height: 24px;
+}
+blockquote {
+    border-left:#eee solid 5px;
+    padding-left:20px;
+}
+code {
+    color:#D34B62;
+    background: #F9F2F4;
+}

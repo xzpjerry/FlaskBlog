@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>Memos</title>
+  <!-- 'viewport' is used by bootstrap to respond to device size -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- BootStrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+  <!-- JQuery and JqueryUI from a content distribution network (CDN) -->
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <!-- moment.js is the JavaScript equivalent of arrow.py -->
+  <script src="{{ url_for('static', filename="js/moment.min.js") }}"></script>
+  
+  <!-- Supporting Markdown-->
+  <script src="{{ url_for('static', filename="js/showdown.min.js") }}"></script>
+  <script src="{{ url_for('static', filename="js/showdown-table.min.js") }}"></script>
+  
+  <script src="{{ url_for('static', filename="js/main.min.js") }}"></script>
+   <!-- Our own style sheet -->
+  <link rel="stylesheet" href="/static/css/memos.css" />
+
+
+</head>
+<body>
+<div class="container">
+<!-- Flashed messages before content -->
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<script type="text/javascript">
+  var has_login = false;
+</script>
+{% if g.LoginProof is defined %}
+{% if g.LoginProof %}
+<script type="text/javascript">
+  var has_login = true;
+</script>
+<div class="row"><button class="button" id="Add_memo">Add</button></div>
+<div class="row"><button class="button2" id="Delete_selected_memos">Delete_selected_memos</button><button class="button3" id="check_all">(De)Select_all</button>
+</div>
+{% endif %}
+{% endif %}
+
+<div id="dialog" style="display: none;"><p id="temp_window" /></div>
+
+<div></div><h2 class="row">Today</h2><div class="container1" id="today"></div>
+<div></div><h2 class="row">Incoming</h2><div class="container1" id="incoming"></div>
+<div></div><h2 class="row">Past</h2><div class="container2" id="past"></div>
+
+
+</div> <!-- container -->
+</body>
+</html>
