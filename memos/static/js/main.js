@@ -11,15 +11,16 @@ $.getJSON("_getmemos", {},
               date = moment.unix(rsl[i].date).local();
               human = now.diff(date, 'days')
               date = date.format()
-              console.log("Got a day! It's " + human);
+              // console.log("Got a day! It's " + human);
               var a_html_code = "";
-              if (has_login) {
+              if (typeof has_login != "undefined" && has_login) {
                 a_html_code += "<input type=\"checkbox\" name=\"memo_selected\">";
               }
               a_html_code += "<label hidden>" + title + "</label>";
               a_html_code += "<label hidden>" + date + "</label>";
               a_html_code += "<button name=\"details_view\" onclick=\"show_details(this)\" class=\"link\"><label>" + title + "</label></button>";
               a_html_code += "<label>" + date + "</label><br>";
+              a_html_code = "<div class=\"col-md-4\">" +  "<div class=\"fh5co-blog animate-box\">" + a_html_code + "</div></div>"
               if (human == 0){
                 $("#today").append(a_html_code);
               } else if (human < 0) { 
