@@ -29,8 +29,7 @@ install:  env  credentials
 #
 credentials:  memos/credentials.ini
 memos/credentials.ini:
-	echo "You just install the database and credentials.ini for it"
-
+	echo "You need to configure the credentials.ini"
 start:	env credentials
 	bash start.sh
 run:	env credentials
